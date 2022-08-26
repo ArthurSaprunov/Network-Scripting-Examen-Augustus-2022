@@ -1,0 +1,33 @@
+---
+- name: Install Nginx
+  hosts: lb
+  become: yes
+  remote_user: root
+
+  tasks:
+    - name: Add epel-release repo
+      apt:
+        name: epel-release
+        state: present
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start NGiNX
+      service:
+        name: nginx
+        state: started
+        
+- name: Install NodeJS
+  hosts: web
+  become: yes
+  remote_user: root
+
+  tasks:
+    - name: Installing Nodejs
+      apt:
+        name: nodejs
+        state: present
+        version: 15.14.0

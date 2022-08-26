@@ -1,0 +1,14 @@
+# /etc/systemd/system/examen.service
+[Unit]
+Description=Examen
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=student
+ExecStart=/usr/bin/npm --prefix /home/student/node/code start
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+{
+  "name": "examen_web_app",
+  "version": "1.0.0",
+  "description": "Node.js Sample Web App",
+  "author": "Esli Heyvaert <esli.heyvaert@howest.be>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

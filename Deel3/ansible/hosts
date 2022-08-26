@@ -1,0 +1,15 @@
+[lb]
+192.168.50.11
+
+[lb:vars]
+ansible_password P@ssw0rd
+ansible_user student
+
+[web]
+192.168.50.12
+192.168.50.13
+
+[web:vars]
+ansible_password P@ssw0rd
+ansible_user student
+
