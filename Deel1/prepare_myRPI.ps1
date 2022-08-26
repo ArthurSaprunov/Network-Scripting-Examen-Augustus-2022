@@ -80,5 +80,11 @@ catch{
 #After everything is done, do the following > only unmounting in this case.
 finally{
 #(2.2.2) Unmount de drive.
+    if(!$TestingLocaly){
+        $vol = get-wmiobject -Class Win32_Volume | where{$_.Name -eq '$BootDriveLetter:\'}  
+        $vol.DriveLetter = $null  
+        $vol.Put()  
+        $vol.Dismount($false, $false)
+    }
 	Remove-PSDrive -Name $BootDriveLetter -Force
 }
